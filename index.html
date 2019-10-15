@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/assets/index.4264e5fc2987f541a8b3.css" rel="stylesheet"></head>
+
+<body>
+  <!--<div class="elem">hello</div>-->
+  <div class="container">
+
+      <div class="grid">
+          <div class="grid-sizer"></div>
+          <div class="grid-item">
+            <img src="images/1.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="images/2.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="images/3.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="images/4.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="images/5.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="images/1.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="images/2.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="images/3.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="images/4.jpg" />
+          </div>
+        </div>
+
+  </div>
+
+
+
+  <script src="./isotope-docs/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="/assets/runtime~index.ce06f2fbfc993bc80e28.bundle.js"></script><script type="text/javascript" src="/assets/index.6a5fbf1e1ff193badf28.bundle.js"></script></body>
+<script>
+  //这个的概念是当有很多行图片，如果每行图片的高度不一致，下面的图片会顶上去多出来的空位，形成张无缝隙的大图片
+  //这个的css我是抄它们给的
+  var grid = document.querySelector('.grid');
+
+  var iso = new Isotope(grid, {
+    itemSelector: '.grid-item',//选择图片
+    percentPosition: true,
+    masonry: {
+      columnWidth: '.grid-sizer'//根据css的size来展现
+    }
+  });
+
+  imagesLoaded(grid).on('progress', function () {
+    // layout Isotope after each image loads
+    iso.layout();
+  });
+
+
+</script>
+
+</html>
